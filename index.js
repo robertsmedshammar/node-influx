@@ -108,6 +108,9 @@ InfluxDB.prototype.url = function (endpoint, options, query) {
   if (this.options.retentionPolicy && !queryObj.rp) {
     queryObj.rp = this.options.retentionPolicy
   }
+  if (this.options.epoch && !queryObj.epoch) {
+    queryObj.epoch = this.options.epoch
+  }
 
   return url.format({
     pathname: endpoint,
